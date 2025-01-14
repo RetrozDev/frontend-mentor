@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
+:root {
+	--home-dark: #111827;
+	--home-dark-hover: #1f2937;
+	--home-light: #f9fafb;
+	--home-light2: #d1d5db;
+	--home-light-hover: #f3f4f6;
+}
+
+.Home {
+	background-color: var(--home-dark);
+	display: flex;
+	min-height: 100vh;
+	font-family: "Comfortaa", sans-serif;
+
+	.navbar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		width: 20%;
+
+		button {
+			font-size: 1rem;
+			transition: all 0.1s;
+			color: var(--home-light);
+			padding: .5rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			&:hover {
+				background-color: var(--home-dark-hover);
+				color: var(--home-light-hover);
+				transform: translatex(5px);
+			}
+		}
+	}
+
+	.projectDisplay {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		background-position: center;
+		flex-grow: 1;
+		justify-content: space-around;
+		align-items: center;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		&::before {
+			content: " ";
+			position: absolute;
+			background: linear-gradient(
+				180deg,
+				var(--home-dark) 5%,
+				rgba(0, 0, 0, 0) 48%,
+				var(--home-dark) 95%
+			);
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+		}
+
+		.projectInfo {
+			position: relative;
+			z-index: 2;
+			background: color-mix(in srgb, var(--home-dark) 20%, transparent);
+			backdrop-filter: blur(5px);
+			padding: .5rem;
+			border-radius: 5px;
+			text-align: center;
+			h1 {
+				color: var(--home-light);
+			}
+
+			p {
+				margin-top: .5rem;
+				color: var(--home-light2);
+			}
+		}
+
+		.carouselControls {
+			position: relative; /* Assure que les contrôles soient correctement positionnés */
+			z-index: 2; /* S'assurer que les contrôles soient au-dessus de l'élément ::before */
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+
+			button {
+				background: color-mix(in srgb, var(--home-dark) 20%, transparent);
+				padding: .5rem;
+				width: 2rem;
+				border-radius: 50%;
+				color: var(--home-light);
+				margin: .5rem;
+			}
+		}
+	}
+}

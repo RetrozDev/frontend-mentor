@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	border: none;
+	margin: 0;
+	font-family: inherit;
+	width: 100%;
+	overflow: visible;
+	background: none;
+	line-height: normal;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
