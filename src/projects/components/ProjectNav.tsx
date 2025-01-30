@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./ProjectNav.module.css";
-import Logo from "./Logo";
+import Logo from "../Logo";
 
 interface ProjectNavProps {
 	project?: string; // This is the project passed from the parent (Layout)
