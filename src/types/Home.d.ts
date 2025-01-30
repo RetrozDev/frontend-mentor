@@ -6,9 +6,9 @@ export interface Project {
 }
 
 export interface ProjectsData {
-	newbie: Project[];
-	junior: Project[];
-	intermediate: Project[];
-	advanced: Project[];
-	guru: Project[];
+	newbie ?: Project[];
+	junior ?: Project[];
+	intermediate ?: Project[];
+	advanced ?: Project[];
+	guru ?: Project[];
 }

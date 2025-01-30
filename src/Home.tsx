@@ -18,7 +18,7 @@ const Home = () => {
 	};
 
 	const changeProject = (direction: "next" | "prev") => {
-		setFade(true); 
+		setFade(true);
 		setTimeout(() => {
 			setCurrentProjectIndex((prevIndex) => {
 				const length = projectsData[activeDifficulty].length;
@@ -26,7 +26,7 @@ const Home = () => {
 					? (prevIndex + 1) % length
 					: (prevIndex - 1 + length) % length;
 			});
-			setFade(false); 
+			setFade(false);
 		}, 300);
 	};
 
@@ -35,8 +35,12 @@ const Home = () => {
 	return (
 		<div className={styles.Home}>
 			<nav className={styles.navbar}>
-				{["newbie", "junior", "intermediate", "advanced", "guru"].map(
-					(difficulty) => (
+				{["newbie", "junior", "intermediate", "advanced", "guru"]
+					.filter(
+						(difficulty) =>
+							projectsData[difficulty as keyof ProjectsData].length > 0,
+					) // Filtrer les niveaux vides
+					.map((difficulty) => (
 						<button
 							key={difficulty}
 							type="button"
@@ -46,8 +50,7 @@ const Home = () => {
 						>
 							{difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
 						</button>
-					),
-				)}
+					))}
 			</nav>
 
 			<main
@@ -57,7 +60,7 @@ const Home = () => {
 				<div className={styles.projectInfo}>
 					<h1>{currentProject.title}</h1>
 					<p>{currentProject.description}</p>
-					<Link to={`/projects/${currentProject.url}`}>See project</Link>
+					<Link to={`/${currentProject.url}`}>See project</Link>
 				</div>
 
 				<div className={styles.carouselControls}>

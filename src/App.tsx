@@ -1,11 +1,14 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from "react-router-dom";
 
 function App() {
-  return (
-    <div className='App'>
-      <Outlet />
-    </div>
-  )
+	const location = useLocation();
+	console.info(location);
+
+	return (
+		<div className="App">
+			<Outlet />
+		</div>
+	);
 }
 
-export default App
+export default App;

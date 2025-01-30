@@ -2,13 +2,13 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import "./index.css"
+import "./index.css";
 //Main
 import App from "./App.tsx";
 import Home from "./Home.tsx";
 
-//Projects 
-import ProjectPage from "./projects/ProjectPage.tsx";
+//Projects
+import Layout from "./projects/components/Layout.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -18,15 +18,11 @@ const router = createBrowserRouter([
 				path: "/",
 				element: <Home />,
 			},
+
 			{
-				path:"/projects",
-				element: <ProjectPage />,
-				children: [
-					{
-						// Todo
-					}
-				]
-			}
+				path: "/:project",
+				element: <Layout />,
+			},
 		],
 	},
 ]);
