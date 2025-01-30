@@ -55,7 +55,7 @@ const Home = () => {
 
 			<main
 				className={`${styles.projectDisplay} ${fade ? styles.fadeOut : styles.fadeIn}`}
-				style={{ backgroundImage: `url(${currentProject.image})` }}
+				style={{ backgroundImage: `URL(../src/img/${currentProject.image})` }}
 			>
 				<div className={styles.projectInfo}>
 					<h1>{currentProject.title}</h1>

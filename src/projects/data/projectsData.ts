@@ -1,5 +1,5 @@
 // Projects import
-import Project1 from "../pages/Project1";
+import Project1 from "../project1/pages/Project1";
 
 type ProjectData = {
   id: string;
@@ -8,5 +8,5 @@ type ProjectData = {
 
 
 export const projectsData: ProjectData[] = [
-  { id: "project1", component: Project1 }
+  { id: "recipe-page-KiTsR8QQKm", component: Project1 }
 ];
