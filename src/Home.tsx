@@ -1,42 +1,33 @@
 import { useState } from "react";
 import styles from "./Home.module.css";
 import projectsData from "./projects.json";
-
-interface Project {
-	title: string;
-	description: string;
-	image: string;
-}
-
-interface ProjectsData {
-	newbie: Project[];
-	junior: Project[];
-	intermediate: Project[];
-	advanced: Project[];
-	guru: Project[];
-}
+import type { ProjectsData } from "./types/Home";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 	const [activeDifficulty, setActiveDifficulty] =
 		useState<keyof ProjectsData>("newbie");
 	const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
+	const [fade, setFade] = useState<boolean>(false);
 
 	const handleDifficultyClick = (difficulty: keyof ProjectsData) => {
 		setActiveDifficulty(difficulty);
 		setCurrentProjectIndex(0);
+		setFade(true);
+		setTimeout(() => setFade(false), 300);
 	};
 
-	const nextProject = () => {
-		const nextIndex =
-			(currentProjectIndex + 1) % projectsData[activeDifficulty].length;
-		setCurrentProjectIndex(nextIndex);
-	};
-
-	const prevProject = () => {
-		const prevIndex =
-			(currentProjectIndex - 1 + projectsData[activeDifficulty].length) %
-			projectsData[activeDifficulty].length;
-		setCurrentProjectIndex(prevIndex);
+	const changeProject = (direction: "next" | "prev") => {
+		setFade(true); 
+		setTimeout(() => {
+			setCurrentProjectIndex((prevIndex) => {
+				const length = projectsData[activeDifficulty].length;
+				return direction === "next"
+					? (prevIndex + 1) % length
+					: (prevIndex - 1 + length) % length;
+			});
+			setFade(false); 
+		}, 300);
 	};
 
 	const currentProject = projectsData[activeDifficulty][currentProjectIndex];
@@ -60,19 +51,20 @@ const Home = () => {
 			</nav>
 
 			<main
-				className={styles.projectDisplay}
+				className={`${styles.projectDisplay} ${fade ? styles.fadeOut : styles.fadeIn}`}
 				style={{ backgroundImage: `url(${currentProject.image})` }}
 			>
 				<div className={styles.projectInfo}>
 					<h1>{currentProject.title}</h1>
 					<p>{currentProject.description}</p>
+					<Link to={`/projects/${currentProject.url}`}>See project</Link>
 				</div>
 
 				<div className={styles.carouselControls}>
-					<button type="button" onClick={prevProject}>
+					<button type="button" onClick={() => changeProject("prev")}>
 						&lt;
 					</button>
-					<button type="button" onClick={nextProject}>
+					<button type="button" onClick={() => changeProject("next")}>
 						&gt;
 					</button>
 				</div>

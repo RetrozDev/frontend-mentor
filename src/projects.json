@@ -3,11 +3,13 @@
       {
         "title": "Project 1 - Newbie",
         "description": "A simple project to learn the basics of frontend development.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+1+-+Newbie"
       },
       {
         "title": "Project 2 - Newbie",
         "description": "Another project to strengthen your HTML and CSS skills.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+2+-+Newbie"
       }
     ],
@@ -15,11 +17,13 @@
       {
         "title": "Project 1 - Junior",
         "description": "A project to learn how to work with JavaScript.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+1+-+Junior"
       },
       {
         "title": "Project 2 - Junior",
         "description": "A project with interactive elements using JavaScript.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+2+-+Junior"
       }
     ],
@@ -27,11 +31,13 @@
       {
         "title": "Project 1 - Intermediate",
         "description": "A project that uses APIs and network requests.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+1+-+Intermediate"
       },
       {
         "title": "Project 2 - Intermediate",
         "description": "A project with complex state management.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+2+-+Intermediate"
       }
     ],
@@ -39,11 +45,13 @@
       {
         "title": "Project 1 - Advanced",
         "description": "A project with advanced animations and transitions.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+1+-+Advanced"
       },
       {
         "title": "Project 2 - Advanced",
         "description": "A complete project with solid architecture and unit tests.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+2+-+Advanced"
       }
     ],
@@ -51,11 +59,13 @@
       {
         "title": "Project 1 - Guru",
         "description": "An extremely complex project with multiple integrations.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+1+-+Guru"
       },
       {
         "title": "Project 2 - Guru",
         "description": "A project that implements advanced performance and security concepts.",
+        "url":"test-url",
         "image": "https://placehold.co/1920x1080?text=Project+2+-+Guru"
       }
     ]
